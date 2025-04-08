@@ -2,7 +2,7 @@
 let currentDate = new Date();
 
 // Displaying the date in various formats
-console.log("To Date String:", currentDate.toDateString());         // e.g., "Mon Apr 08 2025"
+console.log("To Date String:", currentDate.toDateString());        
 console.log("To ISO String:", currentDate.toISOString());         
 console.log("To JSON:", currentDate.toJSON());                      
 console.log("To Locale Date String:", currentDate.toLocaleDateString()); 
@@ -21,7 +21,7 @@ console.log("Type of Date instance:", typeof currentDate); // object
 
 // Creating a custom date (note: months are 0-indexed, so 2 = March)
 let customDate = new Date(2022, 2, 45); // This overflows into April
-console.log("Custom Date:", customDate.toLocaleDateString()); // e.g., "4/14/2022"
+console.log("Custom Date:", customDate.toLocaleDateString()); 
 
 // Getting current timestamp in milliseconds since Unix Epoch
 let currentTimestamp = Date.now();
