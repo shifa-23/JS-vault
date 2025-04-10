@@ -1,0 +1,48 @@
+// Switch Statement Example
+
+const month = "march";
+
+switch (month) {
+  case "jan":
+    console.log("January");
+    break;
+  case "feb":
+    console.log("February");
+    break;
+  case "march":
+    console.log("March");
+    break;
+  case 4:
+    console.log("April");
+    break;
+  default:
+    console.log("Month not matched");
+    break;
+}
+
+// ----------------------------------------
+// Truthy & Falsy Values in JavaScript
+
+// ✅ Truthy values:
+// - true
+// - []
+// - "0"
+// - "false"
+// - " " (a space string)
+
+// ❌ Falsy values:
+// - false
+// - 0
+// - -0
+// - 0n (BigInt zero)
+// - ""
+// - null
+// - undefined
+// - NaN
+
+// Check if an object is empty
+const emptyObj = {};
+
+if (Object.keys(emptyObj).length === 0) {
+  console.log("The object is empty.");
+}
