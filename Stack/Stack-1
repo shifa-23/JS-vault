@@ -1,0 +1,17 @@
+// Nullish Coalescing Operator (??): returns the right-hand value if the left is null or undefined
+
+let val1;
+val1 = 5 ?? 10;                  // 5 is not null/undefined, so val1 = 5
+let val2 = null ?? 10;          // null triggers fallback to 10
+console.log("val1:", val1);     // Output: val1: 5
+console.log("val2:", val2);     // Output: val2: 10
+
+let val3 = null ?? 10 ?? 20;    // null → 10 (first non-nullish value)
+console.log("val3:", val3);     // Output: val3: 10
+
+// Ternary Operator: condition ? exprIfTrue : exprIfFalse
+
+const iceTeaPrice = 100;
+iceTeaPrice <= 80 
+  ? console.log("Less than or equal to 80") 
+  : console.log("More than 80");  // Output: More than 80
