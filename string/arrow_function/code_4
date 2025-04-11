@@ -1,0 +1,2 @@
+const addfour = (num1, num2) => ({ username: "shifa" });
+console.log(addfour(2, 3)); // { username: "shifa" }
