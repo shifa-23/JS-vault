@@ -1,0 +1,5 @@
+const name = () => {
+    let myname = "shifa";
+    console.log(this); // Arrow function
+}
+name();
