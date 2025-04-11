@@ -1,0 +1,4 @@
+const addtwo = (num1, num2) => {
+    return num1 + num2;
+}
+(addtwo(3,4)) // This runs but has no effect unless logged or used
