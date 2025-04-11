@@ -1,0 +1,20 @@
+// IIFE (Immediately Invoked Function Expression)
+
+// ✅ Named Function IIFE
+(function chawal() {
+    console.log("DB connected to");
+})();
+
+// ✅ Arrow Function IIFE with parameter
+((name) => {
+    console.log(`DB is connected ${name}`);
+})("shifa");
+
+// 💬 Interview Notes:
+// What is an IIFE?
+// ➤ A function that runs immediately after it's defined.
+// ➤ Syntax: (function() { ... })(); OR (() => { ... })();
+
+// Why use IIFE?
+// ➤ To avoid polluting the global scope.
+// ➤ Creates a private scope for variables and functions.
