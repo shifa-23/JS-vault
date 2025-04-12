@@ -1,0 +1,46 @@
+// Calling the function 'addone' with argument 2 and logging the result
+console.log(addone(2)); // Output: 3
+
+// Example of global and local scope
+function one() {
+    const username = "shifa"; // 'username' is in the local scope of function 'one'
+
+    function two() {
+        const website = "youtube"; // 'website' is in the local scope of function 'two'
+        console.log(username); // Accessing variable from parent scope (closure)
+    }
+
+    // console.log(website); //  Error: 'website' is not accessible here (outside its scope)
+    two(); // Call inner function
+}
+one(); // Call outer function
+
+// Block scope example using if statement
+if (true) {
+    const username = " shifa"; // Declared within block scope
+
+    if (username == " shifa") {
+        const website = "youtube"; // Declared within nested block scope
+        console.log(username + website); // Output: " shifayoutube"
+    }
+
+    // console.log(website); // Error: 'website' is not accessible outside the if block
+}
+
+// ********************** Interesting question **********************
+
+// Function declaration (hoisted to the top)
+function addone(num) {
+    return num + 1;
+}
+
+// Function call
+addone(2); // Returns 3
+console.log(addone(2)); // Output: 3
+
+// Function expression assigned to a const (not hoisted the same way)
+const addtwo = function(num) {
+    return num + 2;
+};
+
+console.log(addtwo(3)); // Output: 5
