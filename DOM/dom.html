@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM learning</title>
+</head>
+<body style="color: white; background-color: black;">
+<ul class="langauage">
+<li>Javascript</li>
+</ul>
+</body>
+<script>
+    function addLanguage(langName){
+        //firstly create element
+       const li =  document.createElement('li');
+       //now add in inner html
+       li.innerHTML= `${langName}`
+       //now attach in langauage
+       //because its in air nothing below
+       document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+
+    function addoptilanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+}
+addoptilanguage('golang')
+addoptilanguage()
+//Edit
+console.log('hi')
+document.querySelector("li:nth-child(2)")
+</script>
+</html> -->
