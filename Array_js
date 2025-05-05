@@ -1,0 +1,33 @@
+// Creating arrays
+const fruits = ["apple", "banana", "mango"];
+const numbers = [1, 2, 3, 4];
+const colors = new Array("red", "green", "blue");
+
+// Accessing elements
+console.log(fruits[0]); // "apple"
+console.log(fruits[2]); // "mango"
+
+// Modifying elements
+fruits[1] = "orange";
+console.log(fruits); // ["apple", "orange", "mango"]
+
+// Array methods
+fruits.push("grape");     // Add to end
+fruits.pop();             // Remove from end
+fruits.shift();           // Remove from start
+fruits.unshift("kiwi");   // Add to start
+fruits.splice(1, 0, "pineapple"); // Insert at index 1
+
+// Looping through arrays
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+fruits.forEach(fruit => {
+  console.log(fruit);
+});
+
+// Destructuring
+const [first, second] = fruits;
+console.log(first);  // "apple"
+console.log(second); // "orange"
