@@ -1,0 +1,65 @@
+```javascript
+// Basic Tagged Template Example
+function tag(strings, ...values) {
+  console.log(strings); // [ 'Hello ', ', welcome to ', '!' ]
+  console.log(values);  // [ 'John', 'JavaScript' ]
+  return strings.reduce((result, str, i) => result + str + (values[i] || ""), "");
+}
+const name = "John";
+const platform = "JavaScript";
+tag`Hello ${name}, welcome to ${platform}!`;
+
+
+// Safe SQL Builder
+function sql(strings, ...values) {
+  return strings.reduce((query, part, i) =>
+    query + part + (values[i] !== undefined ? escape(values[i]) : ''), '');
+}
+function escape(value) {
+  return String(value).replace(/'/g, "''");
+}
+const user = "O'Reilly";
+const query = sql`SELECT * FROM users WHERE name = '${user}'`;
+console.log(query);
+
+
+// HTML Sanitizer
+function sanitizeHTML(strings, ...values) {
+  const escapeHTML = str =>
+    String(str).replace(/&/g, "&amp;")
+               .replace(/</g, "&lt;")
+               .replace(/>/g, "&gt;")
+               .replace(/"/g, "&quot;")
+               .replace(/'/g, "&#039;");
+  return strings.reduce((result, str, i) =>
+    result + str + (values[i] ? escapeHTML(values[i]) : ''), '');
+}
+const userInput = "<script>alert('Hacked!')</script>";
+const output = sanitizeHTML`<p>${userInput}</p>`;
+console.log(output);
+
+
+// CSS-in-JS Style Builder
+function css(strings, ...values) {
+  return strings.reduce((cssString, str, i) =>
+    cssString + str + (values[i] || ''), '');
+}
+const color = '#3498db';
+const buttonStyle = css`
+  background-color: ${color};
+  color: white;
+  padding: 10px 20px;
+`;
+console.log(buttonStyle);
+
+
+// Custom Markdown-like DSL
+function markdown(strings, ...values) {
+  return strings.reduce((acc, str, i) => acc + str + (values[i] || ''), '')
+                .replace(/__(.*?)__/g, '<strong>$1</strong>')
+                .replace(/_(.*?)_/g, '<em>$1</em>');
+}
+const topic = "JavaScript";
+const sentence = markdown`Learn __${topic}__ with _Tagged Templates_!`;
+console.log(sentence);
+```
