@@ -1,0 +1,60 @@
+// Object Literal
+const person = {
+  name: "Alice",
+  age: 25,
+  greet: function () {
+    console.log("Hello, " + this.name);
+  }
+};
+
+// Object Constructor
+const car = new Object();
+car.brand = "Toyota";
+car.model = "Camry";
+
+// Constructor Function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const user1 = new Person("Bob", 30);
+
+// ES6 Class
+class PersonClass {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hi, I'm ${this.name}`);
+  }
+}
+const user2 = new PersonClass("Carol", 22);
+user2.greet();
+
+// Accessing properties
+console.log(person.name);     // Dot notation
+console.log(person["age"]);   // Bracket notation
+
+// Modifying properties
+person.age = 26;
+person["name"] = "Alicia";
+
+// Looping through object
+for (let key in person) {
+  console.log(`${key}: ${person[key]}`);
+}
+
+// Object utility methods
+console.log(Object.keys(person));
+console.log(Object.values(person));
+console.log(Object.entries(person));
+
+const target = { a: 1 };
+const source = { b: 2 };
+const merged = Object.assign(target, source);
+console.log(merged); // { a: 1, b: 2 }
+
+Object.freeze(person);
+Object.seal(car);
