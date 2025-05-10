@@ -1,0 +1,57 @@
+// 1. Object Destructuring
+const user = { name: "Alice", age: 25, country: "USA" };
+const { name, age } = user;
+const { country: location } = user;
+
+// 2. Computed Property Names
+const key = "score";
+const obj = {
+  [key]: 42
+};
+
+// 3. Property Shorthand
+const firstName = "John";
+const userInfo = { firstName, age };
+
+// 4. Object Methods
+const calculator = {
+  add(a, b) {
+    return a + b;
+  },
+};
+
+// 5. The 'this' Keyword
+const car = {
+  brand: "Toyota",
+  getBrand() {
+    return this.brand;
+  },
+};
+
+// 6. Prototypes & Inheritance
+const animal = {
+  speak() {
+    console.log("Animal speaks");
+  }
+};
+const dog = Object.create(animal);
+dog.bark = function () {
+  console.log("Woof!");
+};
+dog.speak();
+dog.bark();
+
+// 7. Object.defineProperty
+const secretObj = {};
+Object.defineProperty(secretObj, "secret", {
+  value: "Hidden",
+  writable: false,
+  enumerable: false
+});
+
+// 8. Object.freeze and Object.seal
+const config = {
+  apiKey: "123"
+};
+Object.freeze(config);
+config.apiKey = "456"; // No effect
