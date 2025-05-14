@@ -1,0 +1,24 @@
+// Global Scope
+let globalVar = "I'm global";
+
+function testFunctionScope() {
+    // Function Scope
+    let functionVar = "I'm inside a function";
+
+    if (true) {
+        // Block Scope (with let/const)
+        let blockVar = "I'm inside a block";
+        var functionScopedVar = "I'm function-scoped even in block (var)";
+        console.log(blockVar); // Accessible here
+    }
+
+    console.log(functionVar); // Accessible here
+    console.log(functionScopedVar); // Accessible here (var is function-scoped)
+    // console.log(blockVar); // Error: blockVar is not defined
+}
+
+testFunctionScope();
+
+console.log(globalVar); // Accessible
+// console.log(functionVar); // Error: functionVar is not defined
+// console.log(functionScopedVar); // Error: functionScopedVar is not defined
