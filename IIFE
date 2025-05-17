@@ -18,3 +18,9 @@
 // Why use IIFE?
 // ➤ To avoid polluting the global scope.
 // ➤ Creates a private scope for variables and functions.
+
+
+(function () {
+  let message = "Hello from IIFE!";
+  console.log(message);
+})();
