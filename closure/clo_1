@@ -1,0 +1,23 @@
+```javascript
+// Maximum call stack size exceeded
+function recursive() {
+  return recursive();
+}
+
+recursive();
+```
+
+```javascript
+// Closure example
+function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    console.log(`Counter: ${counter}`);
+  };
+}
+
+const increment = outer();
+increment();
+increment();
+```
