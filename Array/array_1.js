@@ -2,7 +2,7 @@
 // const myArray = [0,1,2,3,4,5,true, "shifa"]
 // console.log(myArray);
 // console.log(myArray[3])
-
+  
 
 // console.log(myArray[5]);
 // console.log(myheros[3]);
