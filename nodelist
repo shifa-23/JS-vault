@@ -1,0 +1,12 @@
+<ul>
+  <li class="item">Item 1</li>
+  <li class="item">Item 2</li>
+  <li class="item">Item 3</li>
+</ul>
+
+<script>
+  const items = document.querySelectorAll('.item'); // NodeList
+  items.forEach(item => {
+    item.style.color = 'blue';
+  });
+</script>
