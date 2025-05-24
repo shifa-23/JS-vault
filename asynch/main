@@ -1,0 +1,45 @@
+```javascript
+// Callback Example
+function fetchDataCallback(callback) {
+    setTimeout(() => {
+        callback("Data received via Callback");
+    }, 2000);
+}
+
+fetchDataCallback((data) => {
+    console.log(data);
+});
+
+// Promise Example
+function fetchDataPromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received via Promise");
+        }, 2000);
+    });
+}
+
+fetchDataPromise()
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+// Async/Await Example
+function fetchDataAsync() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received via Async/Await");
+        }, 2000);
+    });
+}
+
+async function getData() {
+    try {
+        const data = await fetchDataAsync();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getData();
+```
